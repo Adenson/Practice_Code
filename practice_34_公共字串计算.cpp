@@ -2,7 +2,7 @@
 链接：https://www.nowcoder.com/practice/98dc82c094e043ccb7e0570e5342dd1b?tpId=37&&tqId=21 298&rp=1&ru=/activity/oj&qru=/ta/huawei/question-ranking
 
 我的代码（通过）：
-我感觉这个题有点问题，题目要求说不区分大小写，但是我没有转换大小写的时候提交之后也对了，加了之后也对了，感觉应该加上。
+我感觉这个题有点问题，题目要求说不区分大小写，但是我没有转换大小写的时候提交之后也对了，加了之后也对了，感觉应该加上其中的条件。
 
 #include<iostream>
 #include<string>
