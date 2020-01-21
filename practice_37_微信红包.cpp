@@ -2,7 +2,8 @@
 链接：https://www.nowcoder.com/practice/fbcf95ed620f42a88be24eb2cd57ec54?tpId=49&&tqId=293 11&rp=1&ru=/activity/oj&qru=/ta/2016test/question-ranking
 
 思路一：
-class Gift {
+class Gift
+{
 public:
 	int getValue(vector<int> gifts, int n)
 	{
@@ -28,7 +29,8 @@ public:
 };
 
 思路二：
-class Gift {
+class Gift 
+{
 public:
     int getValue(vector<int> gifts, int n) 
     {
