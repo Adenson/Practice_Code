@@ -46,10 +46,13 @@ void GetFavoriteFruit(const vector<string>& v, size_t k)
 			pq.push(e);
 			++i;
 		}
-		if (e.second > pq.top().second)
+		else 
 		{
-			pq.pop();
-			pq.push(e);
+			if (e.second > pq.top().second)
+			{
+				pq.pop();
+				pq.push(e);
+			}
 		}
 	}
 
@@ -65,4 +68,33 @@ int main()
 	GetFavoriteFruit(v, 2);
 	system("pause");
 	return 0;
+}
+
+
+
+//方法三：
+vector<string> GetFavoriteFruit(const vector<string>& v, size_t k)
+{
+	map<string, int> CountMap;
+	for (auto& e : v)
+	{
+		CountMap[e]++;
+	}
+
+	multimap<int, string, greater<int>> SortMap;
+	for (auto& e : CountMap)
+	{
+		SortMap.insert(make_pair(e.second, e.first));
+	}
+	int i = 0;
+	vector<string> vv;
+	for (auto& e : SortMap)
+	{
+		if (i < k)
+		{
+			vv.push_back(e.second);
+			i++;
+		}
+	}
+	return vv;
 }
