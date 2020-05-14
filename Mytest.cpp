@@ -278,8 +278,7 @@ void Test_QuickSort(int* arr,int left,int right)
 }
 int main()
 {
-	int arr[] = { 1, 3, 2, 4 };
-	//int arr[] = { 1, 2, 3, 4 };
+	int arr[] = { 1, 2, 3, 4 };
 	int count = sizeof(arr) / sizeof(arr[0]);
 	//InsertSort(arr, count);
 	//ShellSort(arr, count);
