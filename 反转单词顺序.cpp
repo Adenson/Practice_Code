@@ -1,14 +1,54 @@
+class Solution {
+public:
 string reverseWords(string s)
 {
-	reverse(s.begin(), s.end());
-	auto start = s.begin();
+	if (s.size() == 0)
+		return "";
+	int k = 0;
+	while (k < s.size() && s[k] == ' ')
+	{
+		k++; // 去掉前面的空格
+	}
+	s.erase(s.begin(), s.begin() + k);
+	int e = s.size() - 1;
+	while (e >= 0 && s[e] == ' ')
+	{
+		e--; // 去掉后面的空格
+	}
+	s.erase(s.begin() + e +1, s.end());
+
+	string tmp;
+	reverse(s.begin(), s.end());	
+	for (int i = 0; i < s.size(); i++)
+	{
+		if (s[i] != ' ')
+		{
+			tmp += s[i];
+		}
+		else
+		{
+			int j = i;
+			int count = 0;
+			while (s[j] == ' ')//去掉中间多余的空格
+			{
+				count++;
+				if (count == 1)
+				{
+					tmp += s[j];
+				}
+				j++;
+			}
+			i = j - 1;
+		}
+	}
+	auto start = tmp.begin();
 	auto end = start;
-	while (start != s.end() && *start != ' ')
+	while (start != tmp.end() && *start != ' ')
 	{
 		if (*start != ' ')
 		{
 			end = start;
-			while (*end != '\0' && *end != ' ')
+			while (end != tmp.end() && *end != ' ')
 			{
 				end++;
 			}
@@ -22,18 +62,12 @@ string reverseWords(string s)
 			}
 			start = end;
 		}
+		if (start == tmp.end())
+		{
+			break;
+		}
 		start++;
 	}
-	if (start != s.end())
-	{
-		*start = '\0';
-	}
-	return s;
+	return tmp;
 }
-int main()
-{
-	string s("the sky is blue");
-	reverseWords(s);
-	system("pause");
-	return 0;
-}
+};
