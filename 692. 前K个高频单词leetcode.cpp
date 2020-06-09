@@ -56,6 +56,7 @@ public:
     }
 };
 
+
 //方法二：
 class Solution {
 public:
@@ -111,6 +112,7 @@ public:
 	return tmp;
     }
 };
+
 
 
 //方法三：
